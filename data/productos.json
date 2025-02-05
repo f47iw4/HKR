@@ -1,0 +1,49 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Anillo de Oro Rosa",
+        "descripcion": "Elegante anillo de oro rosa de 18k con diamantes.",
+        "precio": 249.99,
+        "imagen": ["img/rutaImagen.jpg"],
+        "categoria": "Anillos",
+        "material": "Oro Rosa",
+        "piedras": ["Diamante"],
+        "stock": 10
+      },
+      {
+        "id": 2,
+        "nombre": "Collar de Perlas",
+        "descripcion": "Hermoso collar de perlas con cierre de plata de ley.",
+        "precio": 189.99,
+        "imagen": ["img/rutaImagen.jpg"],
+        "categoria": "Collares",
+        "material": "Perlas",
+        "piedras": [],
+        "stock": 5
+      },
+      {
+        "id": 3,
+        "nombre": "Pendientes de Plata y Zafiro",
+        "descripcion": "Pendientes de plata esterlina con zafiros azules naturales.",
+        "precio": 129.99,
+        "imagen": ["img/rutaImagen.jpg"],
+        "categoria": "Pendientes",
+        "material": "Plata",
+        "piedras": ["Zafiro"],
+        "stock": 8
+      },
+      {
+        "id": 4,
+        "nombre": "Pulsera de Oro Rosa",
+        "descripcion": "Pulsera de oro rosa de 14k con un diseño minimalista y elegante.",
+        "precio": 199.99,
+        "imagen": ["img/rutaImagen.jpg"],
+        "categoria": "Pulseras",
+        "material": "Oro Rosa",
+        "piedras": [],
+        "stock": 12
+      }
+    ]
+  }
+  
