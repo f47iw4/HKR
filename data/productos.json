@@ -6,7 +6,7 @@
         "descripcion": "Elegante anillo de oro rosa de 18k con diamantes.",
         "precio": 249.99,
         "imagen": ["img/rutaImagen.jpg"],
-        "categoria": "Anillos",
+        "categoria": "anillos",
         "material": "Oro Rosa",
         "piedras": ["Diamante"],
         "stock": 10
@@ -17,8 +17,8 @@
         "descripcion": "Hermoso collar de perlas con cierre de plata de ley.",
         "precio": 189.99,
         "imagen": ["img/rutaImagen.jpg"],
-        "categoria": "Collares",
-        "material": "Perlas",
+        "categoria": "collares",
+        "material": "perlas",
         "piedras": [],
         "stock": 5
       },
@@ -28,8 +28,8 @@
         "descripcion": "Pendientes de plata esterlina con zafiros azules naturales.",
         "precio": 129.99,
         "imagen": ["img/rutaImagen.jpg"],
-        "categoria": "Pendientes",
-        "material": "Plata",
+        "categoria": "pendientes",
+        "material": "plata",
         "piedras": ["Zafiro"],
         "stock": 8
       },
@@ -39,10 +39,22 @@
         "descripcion": "Pulsera de oro rosa de 14k con un diseño minimalista y elegante.",
         "precio": 199.99,
         "imagen": ["img/rutaImagen.jpg"],
-        "categoria": "Pulseras",
+        "categoria": "pulseras",
         "material": "Oro Rosa",
         "piedras": [],
         "stock": 12
+      },
+      {
+        "id": 5,
+        "nombre": "Piercing de plata con cz",
+        "descripcion": "Piercing de plata con cz",
+        "precio": 29.99,
+        "imagen": ["img/rutaImagen.jpg"],
+        "categoria": "piercings",
+        "material": "plata",
+        "piedras": [],
+        "stock": 12
+
       }
     ]
   }
