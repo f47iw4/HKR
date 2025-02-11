@@ -7,8 +7,8 @@ function validarEmail() {
 
     // si es válido
     if (regex.test(email)) {
-        emailError.style.display = 'none'; // Ocultamos el error
-        successModal.show(); // Mostramos el modal de éxito
+        emailError.style.display = 'none'; // si falla no se enseña
+        successModal.show(); 
         setTimeout(() => {
             // cerrar el modal de éxito después de 3 segundos
             var subscribeModal = bootstrap.Modal.getInstance(document.getElementById('subscribeModal'));
