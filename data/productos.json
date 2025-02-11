@@ -3,12 +3,12 @@
       {
         "id": 1,
         "nombre": "Anillo de Oro Rosa",
-        "descripcion": "Elegante anillo de oro rosa de 18k con diamantes.",
+        "descripcion": "Elegante anillo de oro rosa.",
         "precio": 249.99,
-        "imagen": ["img/rutaImagen.jpg"],
+        "imagen": ["/img/productos/1AnilloRosa.png", "/img/productos/1AnilloRosaG.jpg"],
         "categoria": "anillos",
         "material": "Oro Rosa",
-        "piedras": ["Diamante"],
+        "piedras": ["CZ"],
         "stock": 10
       },
       {
@@ -16,7 +16,7 @@
         "nombre": "Collar de Perlas",
         "descripcion": "Hermoso collar de perlas con cierre de plata de ley.",
         "precio": 189.99,
-        "imagen": ["img/rutaImagen.jpg"],
+        "imagen": ["/img/productos/1collarPerl.jpg"],
         "categoria": "collares",
         "material": "perlas",
         "piedras": [],
@@ -24,13 +24,13 @@
       },
       {
         "id": 3,
-        "nombre": "Pendientes de Plata y Zafiro",
-        "descripcion": "Pendientes de plata esterlina con zafiros azules naturales.",
+        "nombre": "Pendientes de aro",
+        "descripcion": "Pendientes de aro de 3cm de diámetro.",
         "precio": 129.99,
-        "imagen": ["img/rutaImagen.jpg"],
+        "imagen": ["img/productos/piercings.png"],
         "categoria": "pendientes",
         "material": "plata",
-        "piedras": ["Zafiro"],
+        "piedras": ["CZ"],
         "stock": 8
       },
       {
