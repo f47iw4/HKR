@@ -1,61 +1,269 @@
-{
-    "productos": [
+[
       {
         "id": 1,
-        "nombre": "Anillo de Oro Rosa",
-        "descripcion": "Elegante anillo de oro rosa.",
-        "precio": 249.99,
-        "imagen": ["/img/productos/1AnilloRosa.png", "/img/productos/1AnilloRosaG.jpg"],
+        "nombre": "Anillo Centelleante",
+        "descripcion": "Anillo de plata con baño de oro rosa y circonitas.",
+        "precio": 79.99,
+        "imagen": ["/img/productos/1AnilloRosa.png"],
         "categoria": "anillos",
-        "material": "Oro Rosa",
+        "material": "plata",
         "piedras": ["CZ"],
         "stock": 10
       },
       {
+        "id": 11,
+        "nombre": "Anillo con corazón troquelado",
+        "descripcion": "Anillo con corazón troquelado. Plata con baño de oro",
+        "precio": 249.99,
+        "imagen": ["/img/productos/J05917-02-1.jpg"],
+        "categoria": "anillos",
+        "material": "Plata",
+        "piedras": [""],
+        "stock": 10
+      },
+      {
+        "id": 12,
+        "nombre": "Anillo de media caña con rodolita y topacio",
+        "descripcion": "Anillo de media caña con rodolita y topacio. Plata con baño de oro",
+        "precio": 249.99,
+        "imagen": ["/img/productos/J05915-02-RO-WT-1.jpg"],
+        "categoria": "anillos",
+        "material": "Plata",
+        "piedras": ["Rodolita, topacio"],
+        "stock": 10
+      },
+      {
+        "id": 13,
+        "nombre": "Anillo de media caña con rodolita y topacio",
+        "descripcion": "Anillo de media caña con rodolita y topacio. Plata con baño de oro",
+        "precio": 249.99,
+        "imagen": ["/img/productos/J05915-02-RO-WT-1.jpg"],
+        "categoria": "anillos",
+        "material": "Plata",
+        "piedras": ["Rodolita, topacio"],
+        "stock": 10
+      },
+      {
+        "id": 14,
+        "nombre": "Anillo ethnic",
+        "descripcion": "Anillo en forma de rombo con topacio y plata ennegrecida.",
+        "precio": 129.99,
+        "imagen": ["img/productos/J05883-01-SC-9K-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": ["topacio"],
+        "stock": 8
+      },
+      {
+        "id": 15,
+        "nombre": "Anillo tipo sello con topacio",
+        "descripcion": "Anillo en forma de sello con topacio blanco y esmalte negro.",
+        "precio": 129.99,
+        "imagen": ["img/productos/J05711-01-ON-WT-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": ["topacio"],
+        "stock": 8
+      },
+      {
+        "id": 16,
+        "nombre": "Anillo boho",
+        "descripcion": "Anillo estilo boho de diamantes y oro blanco de 18k.",
+        "precio": 329.99,
+        "imagen": ["img/productos/J05660-01-18K-I2-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": ["topacio"],
+        "stock": 8
+      },
+      {
+        "id": 17,
+        "nombre": "Anillo corona",
+        "descripcion": "Anillo de plata estilo clásico con topacios y esmalte negro.",
+        "precio": 129.99,
+        "imagen": ["img/productos/J05424-01-WT-BLKENA-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": ["topacio"],
+        "stock": 8
+      },
+      {
+        "id": 18,
+        "nombre": "Anillo de colores",
+        "descripcion": "Anillo de plata 925 bañada en oro amarillo de 18K con rodolita, peridoto y topacio.",
+        "precio": 129.99,
+        "imagen": ["img/productos/J04920-02-RO-PE-LB-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": ["topacio"],
+        "stock": 8
+      },
+      {
+        "id": 19,
+        "nombre": "Anillo serpiente",
+        "descripcion": "Anillo de plata bañado en oro con forma de serpiente.",
+        "precio": 39.99,
+        "imagen": ["img/productos/J04853-02-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 8
+      },
+
+      {
+        "id": 19,
+        "nombre": "Anillo serpiente",
+        "descripcion": "Anillo de plata bañado en oro con forma de serpiente.",
+        "precio": 39.99,
+        "imagen": ["img/productos/J04853-02-1.jpg"],
+        "categoria": "anillos",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 8
+      },
+      {
         "id": 2,
-        "nombre": "Collar de Perlas",
-        "descripcion": "Hermoso collar de perlas con cierre de plata de ley.",
-        "precio": 189.99,
-        "imagen": ["/img/productos/1collarPerl.jpg"],
-        "categoria": "collares",
-        "material": "perlas",
+        "nombre": "Aros de plata",
+        "descripcion": "Pendientes de plata con diseño curvado.",
+        "precio": 39.99,
+        "imagen": ["img/productos/J05134-01_ST-3.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 8
+      },
+      {
+        "id": 21,
+        "nombre": "Pendientes aro con estrella",
+        "descripcion": "Pendientes de aro con charms de estrellas.",
+        "precio": 29.99,
+        "imagen": ["/img/productos/J04941-01_ST-1.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
         "piedras": [],
         "stock": 5
       },
       {
-        "id": 3,
-        "nombre": "Pendientes de aro",
-        "descripcion": "Pendientes de aro de 3cm de diámetro.",
-        "precio": 129.99,
-        "imagen": ["img/productos/piercings.png"],
+        "id": 22,
+        "nombre": "Pendientes de aro con ágata",
+        "descripcion": "Pendientes de aro con charm de ágata verde",
+        "precio": 79.99,
+        "imagen": ["img/productos/J04753-02-GAV_ST-1.jpg"],
         "categoria": "pendientes",
-        "material": "plata",
-        "piedras": ["CZ"],
-        "stock": 8
-      },
-      {
-        "id": 4,
-        "nombre": "Pulsera de Oro Rosa",
-        "descripcion": "Pulsera de oro rosa de 14k con un diseño minimalista y elegante.",
-        "precio": 199.99,
-        "imagen": ["img/rutaImagen.jpg"],
-        "categoria": "pulseras",
-        "material": "Oro Rosa",
-        "piedras": [],
+        "material": "plaTA",
+        "piedras": ["agata"],
         "stock": 12
       },
       {
-        "id": 5,
+        "id": 23,
+        "nombre": "Pendientes de aro con malaquita",
+        "descripcion": "Pendientes de aro con charm de malaquita verde",
+        "precio": 79.99,
+        "imagen": ["img/productos/J04751-02-MA_ST-3.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": ["malaquita"],
+        "stock": 12
+      },
+      {
+        "id": 24,
+        "nombre": "Pendientes de aro con lapislázuli",
+        "descripcion": "Pendientes de aro con charm de lapislázuli",
+        "precio": 79.99,
+        "imagen": ["img/productos/J04751-02-LP_ST-1.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": ["malaquita"],
+        "stock": 12
+      },
+      {
+        "id": 24,
+        "nombre": "Pendientes de aro con espinela negra",
+        "descripcion": "Pendientes de aro con espinela negra.",
+        "precio": 89.99,
+        "imagen": ["img/productos/J03663-03-BSN_ST-1.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": ["espinela"],
+        "stock": 12
+      },
+      {
+        "id": 25,
+        "nombre": "Pendientes cocodrilo ",
+        "descripcion": "Pendientes grandes con forma de cocodrilo",
+        "precio": 119.99,
+        "imagen": ["img/productos/J05764-01-3.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 12
+      },
+      {
+        "id": 26,
+        "nombre": "Pendientes espiral ",
+        "descripcion": "Pendientes grandes con forma de espiral",
+        "precio": 59.99,
+        "imagen": ["img/productos/J05588-01-1.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 12
+      },
+      {
+        "id": 26,
+        "nombre": "Piercing cuore",
+        "descripcion": "Piercing pequeño con forma de corazón",
+        "precio": 79.99,
+        "imagen": ["img/productos/J05612-02-RU-H-18_ST-1.jpg"],
+        "categoria": "piercings",
+        "material": "rubi",
+        "piedras": [""],
+        "stock": 12
+      },
+      {
+        "id": 27,
+        "nombre": "Piercing colores",
+        "descripcion": "Piercing pequeño con piedras de colores",
+        "precio": 119.99,
+        "imagen": ["img/productos/J05764-01-3.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": ["amatista"],
+        "stock": 12
+      },
+      {
+        "id": 100,
         "nombre": "Piercing de plata con cz",
         "descripcion": "Piercing de plata con cz",
         "precio": 29.99,
-        "imagen": ["img/rutaImagen.jpg"],
+        "imagen": ["img/productos/prueba.jpg"],
         "categoria": "piercings",
         "material": "plata",
-        "piedras": [],
+        "piedras": [""],
         "stock": 12
-
+      },
+      {
+        "id": 23,
+        "nombre": "Pendientes de aro con malaquita",
+        "descripcion": "Pendientes de aro con charm de malaquita verde",
+        "precio": 79.99,
+        "imagen": ["img/productos/J04751-02-MA_ST-3.jpg"],
+        "categoria": "pendientes",
+        "material": "plata",
+        "piedras": ["malaquita"],
+        "stock": 12
+      },
+      {
+        "id": 100,
+        "nombre": "Piercing de plata con cz",
+        "descripcion": "Piercing de plata con cz",
+        "precio": 29.99,
+        "imagen": ["img/productos/prueba.jpg"],
+        "categoria": "piercings",
+        "material": "plata",
+        "piedras": [""],
+        "stock": 12
       }
-    ]
-  }
+]
+
   

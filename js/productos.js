@@ -1,30 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // selecciona el contenedor donde se insertan los productos
-    const container = document.getElementById("product-container");
-
-    // carga el JSON 
+document.addEventListener("DOMContentLoaded", function () {
     fetch("data/productos.json")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Error al cargar los productos");
-            }
-            return response.json(); // Convertir la respuesta en JSON
-        })
-        .then(productos => {
-            // Recorrer los productos y generar el HTML
-            productos.forEach(producto => {
-                const productHTML = `
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <img src="${producto.imagen}" alt="${producto.nombre}">
-                            <h5>${producto.nombre}</h5>
-                            <p><strong>$${producto.precio.toFixed(2)}</strong></p>
-                            <button class="btn btn-primary">Comprar</button>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += productHTML;
-            });
-        })
-        .catch(error => console.error("Error al cargar los productos:", error));
-});
+      .then(response => response.json())
+      .then(datos => {
+        const container = document.getElementById("productos-container");
+
+        datos.forEach(producto => {
+          const card = document.createElement("div");
+          card.classList.add("col-md-3");
+
+          card.innerHTML = `
+            <div class="card">
+              <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+              <div class="card-body">
+                <h5 class="card-title">${producto.nombre}</h5>
+                <p class="card-text">${producto.precio}</p>
+                <button class="btn btn-primary">Comprar</button>
+              </div>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => console.error("Error al cargar los productos:", error));
+  });
