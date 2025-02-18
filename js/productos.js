@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         datos.forEach(producto => {
           const card = document.createElement("div");
-          card.classList.add("col-md-3");
+          card.classList.add("col-md-3", "mb-4");
 
           card.innerHTML = `
             <div class="card">
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text">${producto.precio}</p>
-                <button class="btn btn-primary">Comprar</button>
+                <button class="btn btn-primary">añadir</button>
               </div>
             </div>
           `;

@@ -1,15 +1,5 @@
 [
-      {
-        "id": 1,
-        "nombre": "Anillo Centelleante",
-        "descripcion": "Anillo de plata con baño de oro rosa y circonitas.",
-        "precio": 79.99,
-        "imagen": ["/img/productos/1AnilloRosa.png"],
-        "categoria": "anillos",
-        "material": "plata",
-        "piedras": ["CZ"],
-        "stock": 10
-      },
+      
       {
         "id": 11,
         "nombre": "Anillo con corazón troquelado",
@@ -23,17 +13,6 @@
       },
       {
         "id": 12,
-        "nombre": "Anillo de media caña con rodolita y topacio",
-        "descripcion": "Anillo de media caña con rodolita y topacio. Plata con baño de oro",
-        "precio": 249.99,
-        "imagen": ["/img/productos/J05915-02-RO-WT-1.jpg"],
-        "categoria": "anillos",
-        "material": "Plata",
-        "piedras": ["Rodolita, topacio"],
-        "stock": 10
-      },
-      {
-        "id": 13,
         "nombre": "Anillo de media caña con rodolita y topacio",
         "descripcion": "Anillo de media caña con rodolita y topacio. Plata con baño de oro",
         "precio": 249.99,
@@ -98,18 +77,6 @@
         "piedras": ["topacio"],
         "stock": 8
       },
-      {
-        "id": 19,
-        "nombre": "Anillo serpiente",
-        "descripcion": "Anillo de plata bañado en oro con forma de serpiente.",
-        "precio": 39.99,
-        "imagen": ["img/productos/J04853-02-1.jpg"],
-        "categoria": "anillos",
-        "material": "plata",
-        "piedras": [""],
-        "stock": 8
-      },
-
       {
         "id": 19,
         "nombre": "Anillo serpiente",
@@ -221,27 +188,17 @@
         "stock": 12
       },
       {
-        "id": 27,
-        "nombre": "Piercing colores",
-        "descripcion": "Piercing pequeño con piedras de colores",
-        "precio": 119.99,
-        "imagen": ["img/productos/J05764-01-3.jpg"],
-        "categoria": "pendientes",
-        "material": "plata",
-        "piedras": ["amatista"],
-        "stock": 12
-      },
-      {
-        "id": 100,
-        "nombre": "Piercing de plata con cz",
-        "descripcion": "Piercing de plata con cz",
-        "precio": 29.99,
-        "imagen": ["img/productos/prueba.jpg"],
-        "categoria": "piercings",
-        "material": "plata",
-        "piedras": [""],
-        "stock": 12
-      },
+      "id": 27,
+      "nombre": "Piercing colores",
+      "descripcion": "Piercing pequeño con piedras de colores",
+      "precio": 119.99,
+      "imagen": ["img/productos/J05241-02-MULTI-H-18_ST-1.jpg"],
+      "categoria": "pendientes",
+      "material": "plata",
+      "piedras": ["amatista"],
+      "stock": 12
+    },
+
       {
         "id": 23,
         "nombre": "Pendientes de aro con malaquita",

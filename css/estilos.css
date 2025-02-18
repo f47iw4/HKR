@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@import url('');
+body {
+    font-family: 'Rokkit', sans-serif;
+  }
+  
+  /*personalizada (mi fuente)*/
+@font-face {
+    font-family: 'Rokkit' !important;
+    src: url('fonts/Rokkit-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Aplicar la fuente al cuerpoy más*/
+  body {
+    font-family: 'Rokkit', sans-serif;
+    background-color: white;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  /*Colores personalizados para que hagan match con la paleta de colores que elegí */
+
+:root {
+  --bs-primary: #D5BDAF !important; /* El color primario (para fondos) */
+  --bs-secondary: #463f3a !important; /* El color secundario ( para textos) */
+}
+.navbar-custom {
+  background-color: var(--bs-primary);
+}
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--bs-secondary); /* cambia el color de los enlaces */
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: #fff; /* cambiar a blanco al pasar el raton */
+}
+
+/*Botones customizados*/
+
+/* Clase personalizada para los botones*/
+.btn-beige {
+  background-color: #F5EBE0;
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: 2px solid #E0AFA0; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-beige:hover {
+  background-color: #E0AFA0; 
+  transform: scale(1.1); 
+}
+
+.btn-beige:focus {
+  outline: none; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+.btn-light {
+  background-color: #D5BDAF;
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: 2px solid #E0AFA0; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-light:hover {
+  background-color: #E0AFA0; 
+  transform: scale(1.1); 
+}
+
+.btn-light:focus {
+  outline: none; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+
