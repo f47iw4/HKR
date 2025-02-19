@@ -2,9 +2,10 @@
     const textos = [
         "🌸 bienvenid@ a hikari 🌸",
         "🎉 ofertas especiales disponibles 🎉",
-        "🛍 nueva colección ya en línea 🛍",
+        "💍 nueva colección ya en línea 💍",
         "🌟 ¡gracias por visitar nuestro sitio! 🌟",
-        "📞 contáctanos para más detalles 📞"
+        "📞 contáctanos para más detalles 📞",
+        "✨ más novedades próximamente, suscríbete a nuestra newsletter ✨"
       ];
   
       // índice actual del texto

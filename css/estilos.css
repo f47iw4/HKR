@@ -1,20 +1,17 @@
 @charset "UTF-8";
-@import url('');
-body {
-    font-family: 'Rokkit', sans-serif;
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap');
+
+
   /*personalizada (mi fuente)*/
 @font-face {
-    font-family: 'Rokkit' !important;
+    font-family: 'Courier New', Courier, monospace, 'Rokkit' !important;
     src: url('fonts/Rokkit-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
-  
   /* Aplicar la fuente al cuerpoy más*/
   body {
-    font-family: 'Rokkit', sans-serif;
+    font-family: 'Rokkitt', Courier, monospace !important;
     background-color: white;
     margin:0;
     padding:0;
@@ -40,14 +37,14 @@ body {
 
 /*Botones customizados*/
 
-/* Clase personalizada para los botones*/
+/* boton beige redondeado*/
 .btn-beige {
-  background-color: #F5EBE0;
+  background-color: #D5BDAF;
   color: #fff; 
   padding: 10px 20px; 
   font-size: 16px; 
-  border: 2px solid #E0AFA0; 
-  border-radius: 5px; 
+  border: 2px solid #e3d5ca; 
+  border-radius: 50px; 
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -60,14 +57,14 @@ body {
   outline: none; 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
 }
-
+/*boton clarito redondeado*/
 .btn-light {
   background-color: #D5BDAF;
   color: #fff; 
   padding: 10px 20px; 
   font-size: 16px; 
   border: 2px solid #E0AFA0; 
-  border-radius: 5px; 
+  border-radius: 50px; 
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -81,4 +78,15 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
 }
 
+
+/*tarjetas de productos*/
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+.card-img-top:hover {
+  transform: scale(1.1); 
+  cursor: pointer; 
+}
+
+/*estilos personalizados del login*/
 

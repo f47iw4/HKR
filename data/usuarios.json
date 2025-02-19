@@ -1,0 +1,25 @@
+[
+    {   
+        "nombre": "usuario",
+        "apellidos": "usuario",
+        "email": "usuario1@example.com",
+        "password": "1234",
+        "cumpleaños": "1990-05-15"
+
+    }
+    ,
+    {
+        "nombre": "Juan",
+        "apellidos": "Pérez García",
+        "email": "usuario1@example.com",
+        "password": "1234",
+        "cumpleaños": "1990-05-15"
+    },
+    {
+        "nombre": "Ana",
+        "apellidos": "López Ruiz",
+        "email": "usuario2@example.com",
+        "password": "1234",
+        "cumpleaños": "1992-09-20"
+    }
+]

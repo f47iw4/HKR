@@ -19,7 +19,7 @@
         "imagen": ["/img/productos/J05915-02-RO-WT-1.jpg"],
         "categoria": "anillos",
         "material": "Plata",
-        "piedras": ["Rodolita, topacio"],
+        "piedras": ["Rodolita"],
         "stock": 10
       },
       {
@@ -193,15 +193,15 @@
       "descripcion": "Piercing pequeño con piedras de colores",
       "precio": 119.99,
       "imagen": ["img/productos/J05241-02-MULTI-H-18_ST-1.jpg"],
-      "categoria": "pendientes",
+      "categoria": "piercings",
       "material": "plata",
       "piedras": ["amatista"],
       "stock": 12
     },
 
       {
-        "id": 23,
-        "nombre": "Pendientes de aro con malaquita",
+        "id": 28,
+        "nombre": "Aros malaquita",
         "descripcion": "Pendientes de aro con charm de malaquita verde",
         "precio": 79.99,
         "imagen": ["img/productos/J04751-02-MA_ST-3.jpg"],
@@ -211,14 +211,14 @@
         "stock": 12
       },
       {
-        "id": 100,
-        "nombre": "Piercing de plata con cz",
-        "descripcion": "Piercing de plata con cz",
-        "precio": 29.99,
-        "imagen": ["img/productos/prueba.jpg"],
+        "id": 29,
+        "nombre": "Piercing esmeralda",
+        "descripcion": "Piercing de oro con esmeralda y cierre seguro",
+        "precio": 129.99,
+        "imagen": ["/img/productos/J05236-02-EM-H-18_ST-1.jpg"],
         "categoria": "piercings",
-        "material": "plata",
-        "piedras": [""],
+        "material": "oro",
+        "piedras": ["esmeralda"],
         "stock": 12
       }
 ]

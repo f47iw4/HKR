@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <title>HKR-login-registro</title>
+    <link rel="icon" href="img/ico.ico">
+  
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario de inicio de sesión -->
+            <form class="form">
+                <p class="title">Crea tu cuenta en hkr</p>
+                <p class="nombre">Nombre</p>
+                <input placeholder="Tu nombre" class="input" type="text"/>
+                <p class="apellidos">Apellidos</p>
+                <input placeholder="Tus apellidos" class="input" type="text"/>
+                <input placeholder="hola@hikari.es" class="input" type="email" />
+                <p class="contrasenia">Contraseña</p>
+                <input placeholder="Contraseña" class="input" type="password" />
+                <input placeholder="Repite tu contraseña" class="input" type="password"/>
+                <p class="cumpleaños">Cumpleaños</p>
+                <input placeholder="Cumpleaños" class="input" type="date"/>
+                <button class="btn" type="submit" id="regUsuario" onclick=registrarUsuario()>Registrarse</button>
+            </form>
+    <script src="js/validaciones.js"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>

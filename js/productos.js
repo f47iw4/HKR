@@ -14,10 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="card-body">
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text">${producto.precio}</p>
-                <button class="btn btn-primary">añadir</button>
+                <button class="btn-beige">añadir</button>
               </div>
             </div>
           `;
+
 
           container.appendChild(card);
         });

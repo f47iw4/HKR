@@ -1,3 +1,5 @@
+/*Validar direccion de email*/
+
 function validarEmail() {
     var email = document.getElementById('email').value;
     var emailError = document.getElementById('emailError');
@@ -10,12 +12,16 @@ function validarEmail() {
         emailError.style.display = 'none'; // si falla no se enseña
         successModal.show(); 
         setTimeout(() => {
-            // cerrar el modal de éxito después de 3 segundos
+            // cerrar el modal de éxito después de 2 segundos
             var subscribeModal = bootstrap.Modal.getInstance(document.getElementById('subscribeModal'));
             subscribeModal.hide();
-        }, 3000);
+        }, 2000);
     } else {
         // si no es válido
         emailError.style.display = 'block';
     }
 }
+
+
+/TODO: validar nuevo usuario/
+
