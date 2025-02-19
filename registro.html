@@ -6,25 +6,35 @@
     <link rel="stylesheet" href="css/login.css">
     <title>HKR-login-registro</title>
     <link rel="icon" href="img/ico.ico">
-  
 </head>
 <body>
     <div class="container">
-        <!-- Formulario de inicio de sesión -->
-            <form class="form">
-                <p class="title">Crea tu cuenta en hkr</p>
-                <p class="nombre">Nombre</p>
-                <input placeholder="Tu nombre" class="input" type="text"/>
-                <p class="apellidos">Apellidos</p>
-                <input placeholder="Tus apellidos" class="input" type="text"/>
-                <input placeholder="hola@hikari.es" class="input" type="email" />
-                <p class="contrasenia">Contraseña</p>
-                <input placeholder="Contraseña" class="input" type="password" />
-                <input placeholder="Repite tu contraseña" class="input" type="password"/>
-                <p class="cumpleaños">Cumpleaños</p>
-                <input placeholder="Cumpleaños" class="input" type="date"/>
-                <button class="btn" type="submit" id="regUsuario" onclick=registrarUsuario()>Registrarse</button>
-            </form>
+        <!-- Formulario de registro -->
+        <form class="form">
+            <p class="title">Crea tu cuenta en hkr</p>
+
+            <p class="nombre">Nombre</p>
+            <input placeholder="Tu nombre" class="input" type="text" id="nombre"/>
+
+            <p class="apellidos">Apellidos</p>
+            <input placeholder="Tus apellidos" class="input" type="text" id="apellidos"/>
+
+            <p class="email">Correo electrónico</p>
+            <input placeholder="hola@hikari.es" class="input" type="email" id="email"/>
+
+            <p class="contrasenia">Contraseña</p>
+            <input placeholder="Contraseña" class="input" type="password" id="contrasenia"/>
+
+            <p class="contrasenia">Repite tu contraseña</p>
+            <input placeholder="Repite tu contraseña" class="input" type="password" id="contraseniaRepetida"/>
+
+            <p class="cumpleaños">Cumpleaños</p>
+            <input placeholder="Cumpleaños" class="input" type="date" id="cumpleanos"/>
+
+            <button class="btn" type="submit" id="regUsuario">Registrarse</button>
+        </form>
+    </div>
+
     <script src="js/validaciones.js"></script>
     <script src="js/registro.js"></script>
 </body>

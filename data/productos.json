@@ -140,7 +140,7 @@
         "imagen": ["img/productos/J04751-02-LP_ST-1.jpg"],
         "categoria": "pendientes",
         "material": "plata",
-        "piedras": ["malaquita"],
+        "piedras": ["lapislazuli"],
         "stock": 12
       },
       {
@@ -198,19 +198,18 @@
       "piedras": ["amatista"],
       "stock": 12
     },
-
-      {
-        "id": 28,
-        "nombre": "Aros malaquita",
-        "descripcion": "Pendientes de aro con charm de malaquita verde",
-        "precio": 79.99,
-        "imagen": ["img/productos/J04751-02-MA_ST-3.jpg"],
-        "categoria": "pendientes",
-        "material": "plata",
-        "piedras": ["malaquita"],
-        "stock": 12
-      },
-      {
+    {
+      "id": 28,
+      "nombre": "Piercing fuego",
+      "descripcion": "Piercing pequeño con piedra de color",
+      "precio": 97.99,
+      "imagen": ["img/productos/J05255-02-OS-EM-H-18_ST-1.jpg"],
+      "categoria": "piercings",
+      "material": "plata",
+      "piedras": ["amatista"],
+      "stock": 12
+    },
+    {
         "id": 29,
         "nombre": "Piercing esmeralda",
         "descripcion": "Piercing de oro con esmeralda y cierre seguro",
@@ -220,7 +219,7 @@
         "material": "oro",
         "piedras": ["esmeralda"],
         "stock": 12
-      }
+    }
 ]
 
   

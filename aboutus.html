@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HKR-Joyería</title>
+    <link rel="icon" href="img/ico.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+
+    <!-- Fuentes de Google  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&amp;display=swap" rel="stylesheet">
+    <!-- Mi css personalizado-->
+    <link href="css/estilos.css" rel="stylesheet">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+
+
+    <style>
+        /*estilos para los modales*/
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 60px;
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .close-btn {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    ul li {
+    cursor: pointer; 
+    }
+
+    #map {
+        width: 100%;
+        height: 400px;
+        }
+    #location {
+    margin-top: 20px;
+    font-size: 16px;
+    }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar principal -->
+    <nav class="navbar navbar-custom navbar-expand-lg">
+      <div class="container-fluid">
+        <img src="/img/icono-trans.png" alt="Logo" width="35" height="30" href="index.html" alt="Icono de la marca">
+
+
+          <a class="navbar-brand mx-auto" href="index.html" alt="joyería hikari">h i k a r i</a> 
+      </div>
+  </nav>
+
+    <!-- Carrusel de imágenes superior -->
+    <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/editorial/banner1.png" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/editorial/banner2.png" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/editorial/banner3.png" class="d-block w-100" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img src="img/editorial/banner4.jpg" class="d-block w-100" alt="Imagen 4">
+            </div>
+        </div>
+        
+        <!--controles del carrusel (dcha izqda)-->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+ 
+      <br>
+      <br>
+
+      <div id ="infoAboutUs" class="container">
+        <ul>
+            <li id="contacto" class="info-item">Contacto</li>
+            <li id="aviso"class="info-item">Aviso Legal</li>
+            <li id="privacidad"class="info-item">Privacidad del sitio</li>
+            <li id="uso"class="info-item">Condiciones de uso</li>
+            <li id="venta"class="info-item">Condiciones de venta</li>
+        </ul>
+
+        <h6>¿Dónde puedes encontrarnos?</h6>
+        <button onclick="geolocalizar()">Obtener la ubicación</button>
+            <div id="location"></div>
+            <div id="map"></div>
+        
+      </div>
+
+        <!-- Modales -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close" class="close-btn">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+
+
+
+    <!-- footer -->
+    <footer class="navbar-custom navbar-expand-lg text-center py-2">
+      <img src="/img/icono-trans.png" alt="Logo" width="30" height="24">
+        <p class="small mb-0">HKR&copy;</p>
+       </p>        
+    </footer>
+
+    <!-- Bootstrap,JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // coge el contenido del modal
+        const modal = document.getElementById("modal");
+        const closeBtn = document.getElementById("close");
+        const modalTitle = document.getElementById("modal-title");
+        const modalText = document.getElementById("modal-text");
+    
+        const modalsContent = {
+            contacto: {
+                title: "Contacto",
+                text: "Si tienes alguna pregunta o necesitas más información sobre nuestros servicios, no dudes en ponerte en contacto con nosotros. Puedes hacerlo a través del siguiente correo electrónico: contacto@hikari.es. También puedes llamarnos al +34 900 123 456 o encontrarnos online las 24h."
+            },
+            aviso: {
+                title: "Aviso Legal",
+                text: "Este sitio web es propiedad de Hikari S.L. y está destinado exclusivamente a fines informativos. Todos los derechos reservados. El contenido de este sitio, incluyendo textos, imágenes y logos, está protegido por derechos de autor y no puede ser reproducido sin el permiso expreso de la empresa. Hikari S.L. no se hace responsable de los daños derivados del uso incorrecto del contenido de este sitio."
+            },
+            privacidad: {
+                title: "Privacidad del sitio",
+                text: "En Hikari S.L. valoramos tu privacidad. Recopilamos únicamente los datos personales necesarios para proporcionarte nuestros servicios. Estos datos serán utilizados de acuerdo con nuestra Política de Privacidad, que puedes consultar aquí. No compartimos tu información con terceros sin tu consentimiento, salvo en los casos legalmente requeridos. Para más detalles, visita nuestra sección de política de privacidad."
+            },
+            uso: {
+                title: "Condiciones de uso",
+                text: "Al utilizar este sitio web, aceptas cumplir con los términos y condiciones establecidos en este acuerdo. Nos reservamos el derecho de modificar estos términos en cualquier momento. Es tu responsabilidad revisar esta página periódicamente para estar al tanto de cualquier cambio. El uso continuado del sitio después de tales modificaciones implica la aceptación de los nuevos términos."
+            },
+            venta: {
+                title: "Condiciones de venta",
+                text: "Las condiciones de venta de nuestros productos y servicios están sujetas a los términos establecidos en este documento. Aceptamos pedidos de productos disponibles en nuestro catálogo. Todos los productos son enviados dentro de un plazo de 5 a 7 días laborables. Si el pedido no está disponible o tiene algún problema, te notificaremos dentro de las primeras 24 horas. Ofrecemos diferentes opciones de pago, como tarjeta de crédito, transferencia bancaria y PayPal. Las devoluciones se aceptan dentro de los primeros 30 días tras la compra."
+            }
+        };
+    
+        // abrir el modal
+        function openModal(content) {
+            modalTitle.textContent = content.title;
+            modalText.textContent = content.text;
+            modal.style.display = "block";
+        }
+    
+        // eventos de clic de de la lista
+        const items = document.querySelectorAll('.info-item');
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                const id = item.id;
+                if (modalsContent[id]) {
+                    openModal(modalsContent[id]);
+                }
+            });
+        });
+    
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+ </script>
+     
+
+ 
+ <script src="js/geolocation.js"></script>
+</body>
+</html>
