@@ -1,10 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
     let productos = []; // almacena los productos cargados del JSON
-    const container = document.getElementById("productos-container");
+    const container = document.getElementById("container");
+    let cart = [];  // Inicializamos un carrito vacío
 
-    // función que renderiza los productos hacia el contenedor
+    // Function to add products to the cart
+    function addToCart(producto) {
+        const existingProduct = cart.find(item => item.id === producto.id);
+
+        if (existingProduct) {
+            // If the product is already in the cart, increase the quantity
+            existingProduct.quantity++;
+        } else {
+            // Otherwise, add the product with quantity 1
+            producto.quantity = 1;
+            cart.push(producto);
+        }
+
+        updateCartDisplay();  // Update the cart display
+    }
+
+    // Function to update the cart modal display
+    function updateCartDisplay() {
+        const cartContainer = document.getElementById("cart-container");
+        cartContainer.innerHTML = "";  // Clear the cart display
+
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                cartItem.innerHTML = `
+                    <h5>${item.nombre}</h5>
+                    <p>${item.precio}€</p>
+                    <p>Cantidad: ${item.quantity}</p>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+        } else {
+            cartContainer.innerHTML = "<p>No hay productos en el carrito.</p>";
+        }
+    }
+
+    // Open cart modal
+    document.getElementById("imgCarrito").addEventListener("click", function () {
+        document.getElementById("cart-modal").style.display = "block";  // Show the cart modal
+        updateCartDisplay();  // Update the cart contents
+    });
+
+    // Close cart modal
+    document.getElementById("close-cart").addEventListener("click", function () {
+        document.getElementById("cart-modal").style.display = "none";  // Hide the cart modal
+    });
+
+    // Function to render products
     function mostrarProductos(lista) {
-        container.innerHTML = ""; // Limpiar antes de agregar nuevos productos
+        const container = document.getElementById("productos-container"); 
+        container.innerHTML = ""; 
+    
         if (lista.length > 0) {
             lista.forEach(producto => {
                 const card = document.createElement("div");
@@ -14,34 +65,41 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                         <div class="card-body">
                             <h5 class="card-title">${producto.nombre}</h5>
-                            <p class="card-text">${producto.precio}</p>
-                            <button class="btn-beige">añadir</button>
+                            <p class="card-text">${producto.precio}€</p>
+                            <button class="btn boton-agregado" data-id="${producto.id}">Añadir</button>
                         </div>
                     </div>
                 `;
+    
+                const addButton = card.querySelector(".boton-agregado");
+                addButton.addEventListener("click", function () {
+                    addToCart(producto);  // Add the product to the cart when clicked
+                });
+    
                 container.appendChild(card);
             });
         } else {
             container.innerHTML = `<p class="text-center w-100">No se encontraron productos.</p>`;
         }
     }
+    
 
-    // carga los productos desde el JSON
+    // Load products from JSON
     fetch("data/productos.json")
         .then(response => response.json())
         .then(datos => {
             productos = datos;
-            mostrarProductos(productos); // Mostrar todos los productos inicialmente
+            mostrarProductos(productos);  // Display products when loaded
         })
         .catch(error => console.error("Error al cargar los productos:", error));
 
-    // Búsqueda por texto
+    // Search functionality (text search)
     document.getElementById("searchForm").addEventListener("submit", function (e) {
         e.preventDefault();
         const query = document.getElementById("searchInput").value.toLowerCase().trim();
 
         if (query === "") {
-            mostrarProductos(productos); // Si la búsqueda está vacía, muestra todos los productos
+            mostrarProductos(productos);  // Show all products if search is empty
         } else {
             const resultados = productos.filter(p => 
                 p.categoria.toLowerCase().includes(query) ||
@@ -53,25 +111,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Búsqueda por clic en la navbar
+    // Category search by navbar
     const categoriaLinks = document.querySelectorAll(".nav-link");
     categoriaLinks.forEach(link => {
         link.addEventListener("click", function (e) {
-            e.preventDefault(); // Prevenir el comportamiento por defecto de los enlaces
-            const categoriaSeleccionada = this.getAttribute("data-categoria").toLowerCase(); // Obtener la categoría
+            e.preventDefault(); 
+            const categoriaSeleccionada = this.getAttribute("data-categoria").toLowerCase(); // Get category
 
             const resultados = productos.filter(p => 
                 p.categoria.toLowerCase() === categoriaSeleccionada ||
-                p.nombre.toLowerCase().includes(categoriaSeleccionada) || // Extra: búsqueda por nombre
-                p.descripcion.toLowerCase().includes(categoriaSeleccionada) || // Extra: búsqueda por descripción
-                p.material.toLowerCase().includes(categoriaSeleccionada) // Extra: búsqueda por material
+                p.nombre.toLowerCase().includes(categoriaSeleccionada) || 
+                p.descripcion.toLowerCase().includes(categoriaSeleccionada) || 
+                p.material.toLowerCase().includes(categoriaSeleccionada) 
             );
 
-            mostrarProductos(resultados); // Mostrar los productos filtrados por la categoría
+            mostrarProductos(resultados); // Show filtered products by category
         });
     });
 
-    // Búsqueda por voz (opcional)
+    // Voice search functionality
     document.getElementById("voiceInput").addEventListener("click", function () {
         if ("webkitSpeechRecognition" in window) {
             const recognition = new webkitSpeechRecognition();
@@ -85,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const query = transcript.toLowerCase().trim();
 
                 if (query === "") {
-                    mostrarProductos(productos); // Si la búsqueda está vacía, muestra todos los productos
+                    mostrarProductos(productos);  // Show all products if search is empty
                 } else {
                     const resultados = productos.filter(p => 
                         p.categoria.toLowerCase().includes(query) ||
@@ -96,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     mostrarProductos(resultados);
                 }
             };
-
             recognition.start();
         } else {
             alert("Tu navegador no soporta la búsqueda por voz.");

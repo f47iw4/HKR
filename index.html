@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HKR-Joyería</title>
     <link rel="icon" href="img/ico.ico">
+    <!-- Mi css personalizado-->
+    <link href="css/estilos.css" rel="stylesheet"> 
 
     <!-- Fuentes de Google  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&amp;display=swap" rel="stylesheet">
-    <!-- Mi css personalizado-->
-    <link href="css/estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
     <!-- Bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>  
@@ -20,46 +21,58 @@
 <body>
     <!-- Navbar superior -->
     <nav class="navbar navbar-custom navbar-expand-lg">
-      <div class="container-fluid">
-        <img src="/img/icono-trans.png" alt="Logo" width="35" height="30" href="index.html" alt="Icono de la marca">
-        <a href="login.html" class="btn btn-beige">
-          <i class="bi bi-person"></i>Iniciar sesión</a>
-          <a class="navbar-brand mx-auto" href="index.html" alt="joyería hikari">h i k a r i</a> 
-              <!-- barra de búsqueda -->
-          <form class="d-flex" id="searchForm">
-              <input class="form-control me-2 btn-beige" type="search" id="searchInput" placeholder="buscar por categoría" aria-label="Buscar">
-              <button class="btn btn-light" type="submit">🔎</button>
-              <!-- micrófono -->
-              <button class="btn btn-light" type="button" id="voiceInput" alt="búsqueda por voz">
-                  <img src="img/resources/microfono.png" alt="Micrófono" width="24" height="24">
-              <!-- carrito -->
-              <button class="btn btn-light" type="button" id="imgCarrito" alt="carrito de la compra">
-                <a href="carrito.html">
-                  <img src="img/resources/carrito.png" alt="Micrófono" width="24" height="24">
-              </button>
-              <!-- favoritos -->
-              <button class="btn btn-light" type="button" id="imgFavorito" alt="mis favoritos">
-                <a href="favoritos.html">
-                  <img src="img/resources/fav.png" alt="Micrófono" width="24" height="24">
-              </button>
-          </form>
-      </div>
-  </nav>
+        <div class="container-fluid">
+            <img src="/img/icono-trans.png" width="35" height="30" href="index.html">
+            <a href="login.html" class="btn btn-beige">
+                <li id="user-info"></li>
+                <a class="navbar-brand mx-auto" href="index.html">h i k a r i</a>
+            </a>
+            <!-- Barra de búsqueda -->
+            <form class="d-flex" id="searchForm">
+                <input class="form-control me-2 btn-beige" type="search" id="searchInput" placeholder="buscar por categoría" aria-label="Buscar">
+                <button class="btn btn-light" type="submit" aria-label="búsqueda visual">🔎</button>
+                <!-- Micrófono -->
+                <button class="btn btn-light" type="button" id="voiceInput" aria-label="búsqueda por voz">
+                    <img src="img/resources/microfono.png" width="24" height="24">
+                </button>
+                <!-- Botón de carrito -->
+                <button class="btn btn-light" type="button" id="imgCarrito" aria-label="Carrito de la compra">
+                    <img src="img/resources/carrito.png" width="24" height="24">
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal" style="display: none;">
+        <div class="cart-content">
+            <h2>Carrito de la compra</h2>
+            <div id="cart-container"></div>
+            <button id="close-cart" class="btn btn-dark">Cerrar carrito</button>
+        </div>
+    </div>
+
+    <!-- Product container -->
+    <div id="container"></div> <!-- Product list will be displayed here -->
+
+</body>
+
+
 
     <!-- Carrusel de imágenes superior -->
     <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/editorial/banner1.png" class="d-block w-100" alt="Imagen 1">
+                <img src="img/editorial/banner1.png" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="img/editorial/banner2.png" class="d-block w-100" alt="Imagen 2">
+                <img src="img/editorial/banner2.png" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="img/editorial/banner3.png" class="d-block w-100" alt="Imagen 3">
+                <img src="img/editorial/banner3.png" class="d-block w-100">
             </div>
             <div class="carousel-item">
-                <img src="img/editorial/banner4.jpg" class="d-block w-100" alt="Imagen 4">
+                <img src="img/editorial/banner4.jpg" class="d-block w-100" alt="Imagen 4"> <!--depuracion-->
             </div>
         </div>
         
@@ -90,27 +103,26 @@
                           <a class="nav-link" href="#" data-categoria="pendientes">pendientes</a>
                       </li>
                       <li class="nav-item">
-                        <a class="navbar-brand mx-auto" href="aboutus.html" alt="joyería hikari">acerca de hikari</a> 
+                        <a class="navbar-brand mx-auto" href="aboutus.html">acerca de hikari</a> 
                       </li>
                   </ul>
               </div>
           </div>
       </nav>
 
-
-
     <!-- Carrusel de imágenes medio -->
-
     <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="img/editorial/masVendidos.png" class="d-block w-100" href="index.html" alt="Imagen 1">
+            <a href="index.html">
+                <img src="img/editorial/masVendidos.png" class="d-block w-100" alt="Más vendidos">
+              </a>
             </div>
           <div class="carousel-item ">
-              <img src="img/editorial/nailPolish.png" class="d-block w-100" alt="Imagen 3">
+              <img src="img/editorial/nailPolish.png" class="d-block w-100" >
           </div>
           <div class="carousel-item ">
-              <img src="img/editorial/naranjaDef.png" class="d-block w-100" alt="Imagen 4">
+              <img src="img/editorial/naranjaDef.png" class="d-block w-100">
           </div>
     </div>
 
@@ -130,7 +142,30 @@
 </nav>
 
   <!-- Contenedor de tarjetas de productos que recibe los datos del JSON con fetch a través de productos.js-->
-    <div id="productos-container" class="row"></div>
+
+        <div id="productos-container" class="row"></div>
+        <div class="modal-body">
+            <div id="carrito-container"></div>
+        </div>
+
+    <!-- boton del carrito -->
+  <!-- Dropdown del carrito -->
+        <!-- <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="carritoDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Carrito <span id="contadorCarrito">(0)</span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="carritoDropdown" id="carrito-container">
+                <li><p class="text-muted">Cargando...</p></li>
+            </ul>
+        </div> -->
+
+
+
+    <!-- banner de las galletas-->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>Usamos cookies para mejorar tu experiencia. Al continuar navegando, aceptas su uso. <button id="accept-cookies">Aceptar</button></p>
+    </div>
+ 
 
     <!-- FOOTER -->
     <footer class="navbar-custom navbar-expand-lg text-center py-2">
@@ -161,9 +196,7 @@
             </div>
         </div>
     </div>
-
-    
-    <!-- modal de éxito al suscribirse -->
+    <!-- modal de exito al suscribirse -->
     <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -183,11 +216,25 @@
 
 
     <!-- Bootstrap,JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+        if (usuario) {
+            document.getElementById("user-email").textContent = usuario.email;
+        }
+    });
+
+     </script>
+    <script type="module" src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="js/validaciones.js"></script>
-    <script src="js/productos.js"></script>
     <script src="js/intervaloNavBar.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/cookies.js"></script>
+    <!-- <script src="js/carrito.js"></script> -->
+    <script src="js/cart.js"></script>
+
+</body>
 </body>
 </html>

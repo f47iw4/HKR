@@ -2,7 +2,7 @@
       
       {
         "id": 11,
-        "nombre": "Anillo con corazón troquelado",
+        "nombre": "Anillo corazón",
         "descripcion": "Anillo con corazón troquelado. Plata con baño de oro",
         "precio": 249.99,
         "imagen": ["/img/productos/J05917-02-1.jpg"],
@@ -13,7 +13,7 @@
       },
       {
         "id": 12,
-        "nombre": "Anillo de media caña con rodolita y topacio",
+        "nombre": "Anillo media caña",
         "descripcion": "Anillo de media caña con rodolita y topacio. Plata con baño de oro",
         "precio": 249.99,
         "imagen": ["/img/productos/J05915-02-RO-WT-1.jpg"],
@@ -35,7 +35,7 @@
       },
       {
         "id": 15,
-        "nombre": "Anillo tipo sello con topacio",
+        "nombre": "Anillo sello",
         "descripcion": "Anillo en forma de sello con topacio blanco y esmalte negro.",
         "precio": 129.99,
         "imagen": ["img/productos/J05711-01-ON-WT-1.jpg"],
@@ -68,7 +68,7 @@
       },
       {
         "id": 18,
-        "nombre": "Anillo de colores",
+        "nombre": "Anillo colores",
         "descripcion": "Anillo de plata 925 bañada en oro amarillo de 18K con rodolita, peridoto y topacio.",
         "precio": 129.99,
         "imagen": ["img/productos/J04920-02-RO-PE-LB-1.jpg"],
@@ -101,7 +101,7 @@
       },
       {
         "id": 21,
-        "nombre": "Pendientes aro con estrella",
+        "nombre": "Pendientes estrella",
         "descripcion": "Pendientes de aro con charms de estrellas.",
         "precio": 29.99,
         "imagen": ["/img/productos/J04941-01_ST-1.jpg"],
@@ -112,7 +112,7 @@
       },
       {
         "id": 22,
-        "nombre": "Pendientes de aro con ágata",
+        "nombre": "Pendientes ágata",
         "descripcion": "Pendientes de aro con charm de ágata verde",
         "precio": 79.99,
         "imagen": ["img/productos/J04753-02-GAV_ST-1.jpg"],
@@ -123,7 +123,7 @@
       },
       {
         "id": 23,
-        "nombre": "Pendientes de aro con malaquita",
+        "nombre": "Pendientes malaquita",
         "descripcion": "Pendientes de aro con charm de malaquita verde",
         "precio": 79.99,
         "imagen": ["img/productos/J04751-02-MA_ST-3.jpg"],
@@ -134,7 +134,7 @@
       },
       {
         "id": 24,
-        "nombre": "Pendientes de aro con lapislázuli",
+        "nombre": "Pendientes lapislázuli",
         "descripcion": "Pendientes de aro con charm de lapislázuli",
         "precio": 79.99,
         "imagen": ["img/productos/J04751-02-LP_ST-1.jpg"],
@@ -145,7 +145,7 @@
       },
       {
         "id": 24,
-        "nombre": "Pendientes de aro con espinela negra",
+        "nombre": "Pendientes spinela",
         "descripcion": "Pendientes de aro con espinela negra.",
         "precio": 89.99,
         "imagen": ["img/productos/J03663-03-BSN_ST-1.jpg"],
