@@ -1,28 +1,28 @@
-let cart = [];  // Initialize an empty cart
+let cart = [];  // inicializa la cesta vacia
 
 
-// Function to add a product to the cart
+// añade producto a la cesta
 function addToCart(producto) {
-    // Check if the product is already in the cart
+    // Comprueba si esta ya en la cesta
     const existingProduct = cart.find(item => item.id === producto.id);
     
     if (existingProduct) {
-        // If the product is already in the cart, increase the quantity
+        // si ya está en la cesta incrementa la cantidad 
         existingProduct.quantity++;
     } else {
-        // Otherwise, add the product to the cart with quantity 1
+        // sino, añade a la cesta con cantidad 1
         producto.quantity = 1;
         cart.push(producto);
     }
 
-    console.log(cart);  // Log the cart to check if products are added
-    updateCartDisplay();  // Update the cart display when a product is added
+    console.log(cart);  
+    updateCartDisplay();  
 }
 
-// Function to update the cart display
+// actualiza el display del cart
 function updateCartDisplay() {
     const cartContainer = document.getElementById("cart-container");
-    cartContainer.innerHTML = "";  // Clear the cart display
+    cartContainer.innerHTML = "";  
 
     if (cart.length > 0) {
         cart.forEach(item => {
@@ -40,13 +40,13 @@ function updateCartDisplay() {
     }
 }
 
-// Function to open the cart modal
+// abre modal del carrito
 document.getElementById("imgCarrito").addEventListener("click", function() {
     document.getElementById("cart-modal").style.display = "block";  // Show the cart modal
     updateCartDisplay();  // Update the cart contents
 });
 
-// Function to close the cart modal
+// cierra modal del carrito
 document.getElementById("close-cart").addEventListener("click", function() {
     document.getElementById("cart-modal").style.display = "none";  // Hide the cart modal
 });

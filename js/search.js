@@ -3,26 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("container");
     let cart = [];  // Inicializamos un carrito vacío
 
-    // Function to add products to the cart
+
     function addToCart(producto) {
         const existingProduct = cart.find(item => item.id === producto.id);
 
         if (existingProduct) {
-            // If the product is already in the cart, increase the quantity
+
             existingProduct.quantity++;
         } else {
-            // Otherwise, add the product with quantity 1
+
             producto.quantity = 1;
             cart.push(producto);
         }
 
-        updateCartDisplay();  // Update the cart display
+        updateCartDisplay();  
     }
 
-    // Function to update the cart modal display
     function updateCartDisplay() {
         const cartContainer = document.getElementById("cart-container");
-        cartContainer.innerHTML = "";  // Clear the cart display
+        cartContainer.innerHTML = "";  
 
         if (cart.length > 0) {
             cart.forEach(item => {
@@ -40,18 +39,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Open cart modal
+
     document.getElementById("imgCarrito").addEventListener("click", function () {
-        document.getElementById("cart-modal").style.display = "block";  // Show the cart modal
-        updateCartDisplay();  // Update the cart contents
+        document.getElementById("cart-modal").style.display = "block";  
+        updateCartDisplay();  
     });
 
-    // Close cart modal
+
     document.getElementById("close-cart").addEventListener("click", function () {
         document.getElementById("cart-modal").style.display = "none";  // Hide the cart modal
     });
 
-    // Function to render products
+    
     function mostrarProductos(lista) {
         const container = document.getElementById("productos-container"); 
         container.innerHTML = ""; 
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
                 const addButton = card.querySelector(".boton-agregado");
                 addButton.addEventListener("click", function () {
-                    addToCart(producto);  // Add the product to the cart when clicked
+                    addToCart(producto);  // añade al carrito al clicar
                 });
     
                 container.appendChild(card);
@@ -83,23 +82,55 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
+     //carga los productos desde la api desplegada 
 
-    // Load products from JSON
+    fetch("https://hkr-api-production.up.railway.app/api/productos/") 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error en la API: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(datos => {
+        productos = datos;
+        mostrarProductos(productos);  
+    })
+    .catch(error => console.error("Error al cargar los productos:", error)); 
+    
+    
+    /* carga los productos desde la api 
+
+    fetch("http://localhost:8001/api/productos/") 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Error en la API: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(datos => {
+        productos = datos;
+        mostrarProductos(productos);  
+    })
+    .catch(error => console.error("Error al cargar los productos:", error)); 
+    
+    /*
+
+    /*carga los productos desde el json productos
     fetch("data/productos.json")
         .then(response => response.json())
         .then(datos => {
             productos = datos;
-            mostrarProductos(productos);  // Display products when loaded
+            mostrarProductos(productos);  
         })
         .catch(error => console.error("Error al cargar los productos:", error));
-
-    // Search functionality (text search)
+    */
+    // funcionalidad de busqueda (barra)
     document.getElementById("searchForm").addEventListener("submit", function (e) {
         e.preventDefault();
         const query = document.getElementById("searchInput").value.toLowerCase().trim();
 
         if (query === "") {
-            mostrarProductos(productos);  // Show all products if search is empty
+            mostrarProductos(productos);  
         } else {
             const resultados = productos.filter(p => 
                 p.categoria.toLowerCase().includes(query) ||
@@ -111,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Category search by navbar
+    // busca categorias navbar 
     const categoriaLinks = document.querySelectorAll(".nav-link");
     categoriaLinks.forEach(link => {
         link.addEventListener("click", function (e) {
@@ -125,11 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 p.material.toLowerCase().includes(categoriaSeleccionada) 
             );
 
-            mostrarProductos(resultados); // Show filtered products by category
+            mostrarProductos(resultados); //filtra por ctegoria
         });
     });
 
-    // Voice search functionality
+    // funcionalidad de busqueda por voz 
     document.getElementById("voiceInput").addEventListener("click", function () {
         if ("webkitSpeechRecognition" in window) {
             const recognition = new webkitSpeechRecognition();
@@ -143,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const query = transcript.toLowerCase().trim();
 
                 if (query === "") {
-                    mostrarProductos(productos);  // Show all products if search is empty
+                    mostrarProductos(productos);  
                 } else {
                     const resultados = productos.filter(p => 
                         p.categoria.toLowerCase().includes(query) ||
